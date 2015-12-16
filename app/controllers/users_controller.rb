@@ -10,16 +10,16 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
-    if @user == current_user
-      redirect_to root_url
-  　end
+    if @user != current_user
+      redirect_to root_path, alert: "不正なアクセスです！"
+   end
   end 
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success]="Profile updated"
+    if @user != current_user
+      redirect_to root_path, alert: "不正なアクセスです！"
+    elsif @user.update_attributes(user_params)
+      flash[:success]="Profile updatee"
       redirect_to @user
     else
      render'edit'
