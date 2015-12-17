@@ -1,5 +1,9 @@
 <h1>
   <%= gravatar_for @user %>
-    
-  <%= @user.name %>  
 </h1>
+
+<li>
+  <div>Name: <%= link_to @user.name, user_path(@user) %></div>
+  <div>Mail: <%= @user.email %></div>
+  <div><%= gravatar_for @user %></div>
+</li>
