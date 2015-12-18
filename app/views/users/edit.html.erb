@@ -18,6 +18,13 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :profile %>
+      <%= f.text_field :profile, class: 'form-control' %>
+      
+      <%= f.label :area %>
+      <%= f.text_field :area, class: 'form-control' %>     
+
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
     
